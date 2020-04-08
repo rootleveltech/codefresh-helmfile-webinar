@@ -1,0 +1,47 @@
+replicas: 1
+rbac:
+  enabled: true
+service:
+  annotations: {}
+dashboard:
+  domain:  traefik-public.demo.rootleveltech.com
+  enabled: true
+  ingress:
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: false
+      kubernetes.io/ingress.class: traefik-public
+kubernetes:
+  ingressClass: traefik-public
+  ingressEndpoint:
+    useDefaultPublishedService: true
+ssl:
+  enabled: true
+
+secretFiles:
+  gcloud-credentials.json: '{
+      "type": "service_account",
+      "project_id": "witronix-sandbox",
+      "private_key_id": "9cf4e259331cd9c574e36ace34e393b2319acd33",
+      "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBwKEjX8kbtqIO\nNcKolQCPMm5eoJmcu3jbj5jzOf8p1/Y6kjCv1zqADsMpXJoNI8a7zpSsDHAVE1g9\nPJ3rG1euV6aaNoKRcZF5wlRftyBF2+rC5xXZZyyAqk1rQ7x5Z6uiadtCT4oaDlDo\n4bRvX7GWY1nnEscJwoeXVJIiBx/L7fb1PUeZwLms/Hbm8CBsazOqPlNz87GNrDZb\nfeV5HwyaI6JJ2y42fZAw5UlLoqCkrPcYFl3NkIQrm+q8fwsKxTN0FPiu5XWXcJBR\nBj8ErgzFjkIsV6uh4Vzfwar1QjKmsZ8PvSUBeLQ8AznX3XCDbXGbW7sYndQ59MXj\njiz/jxWJAgMBAAECggEAALpZbttBtw8pfLQuHUQHYPQgcLGvGvMyQCgJEUuJJzcX\nm/RHw2+VWZJC2XJEEB+vnpF1dKVa31XXtwa9DZe9mCWlC3u48dvVJk8R7oaSfrCy\nKRlMRX6bEmtYfVatlpj1HQKnBnRO76E8XJVnKs6ekKEwtGPD5I9FprIfFt/cbA3v\nJPE/1+58zmWFK4fzzA65gBn9lFzbdXiSDY4jVsVO+iFW2TahKsCLFHPWuXK1ozn2\nQJgJCPlfcMesWYyItrBwQ0bGZdY3HdR8ZHOSf3kbV2WOqdrEJ9l+zkx9zD6kFmlU\n3rAptn1RxfXZ+61ziqYnlo2fml+E+15S4ivskKqUIQKBgQDtqUj8vZZq5xaVc8ga\nZyjQXUHusfKAVUecOpL8ZSsFN16PZmNxExYVctsaW7INu24ZQSJ4ycQu3k7H/yWT\nsGvkJpkTTwhWvVlXJ0+0jwpyL8Gs2uvxG2iCu0ozOrtgTQpXZRUZj+tgh5DgdA53\n3zUwcpOL+0xH54Yz1Q9O9c1qPwKBgQDQs/poIV3B1uMYu3Zaks+OHBI2aYWJXrdZ\niSb6J5y5adWdop/GysCbcJusrNTf6pYNFqdXfSLGlk8yGrKbveMt3bvFxzKKeQCU\nm2zGI1XRg04jVI4k3Bdcqr4RTXp2OTe9BJ12M7akZVtNolErXhD2BraxbbYH7uEj\nkDKMjs4+NwKBgQDiMdeErVDHSE/nSH4wGvTuc4P4EaczW3c/i0QwMn2ihlNaemG0\n0iyXl2xPhuxNQ5GDOcn8WlR9IxqqIP37tdLKH65bgUH3hFnOqFylBes0SJ21zdr3\n7FUo7+asIX8LJefszAkr/h1RD1XlOrA2iNuP08z4UuIEIahKFsNuLGYocwKBgCe/\nv5eJk1PR25rgSWBiycklK4rVeit5sK4K4zONy9m8gITvbkLsZta0EdJHcJvdEAsa\nH3EYUkFEa3z9fLsQ5W3c52B52fRpq2SiXYs3O6cVvRIZjqESkhiCJIUjHonZx/Xm\nJR9YJhcVfthAa/k4hz50dONCJANKyfJ+CkKfCETtAoGAVYejfk8YINJWy9uybQT2\nJqK6knC3feBIaxXsNsWQnlTRxiOWZy1EXqEDINS2YHCcAkQZZ13en1OlbDthF6xJ\ncJrb+rHOHNGosEX4+gy5v3yoFV4240cxUNvamA3j+XWM70amUuwuXPAWttKLe2h3\nxTUf0rmVnuWOWIHpWYC90wg=\n-----END PRIVATE KEY-----\n",
+      "client_email": "kubernetes-dns@witronix-sandbox.iam.gserviceaccount.com",
+      "client_id": "103673866224213774648",
+      "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+      "token_uri": "https://oauth2.googleapis.com/token",
+      "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+      "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kubernetes-dns%40witronix-sandbox.iam.gserviceaccount.com"
+    }'
+
+acme:
+  enabled: true
+  staging: false
+  email: devops@rootleveltech.com
+  challengeType: dns-01
+  dnsProvider:
+    name: gcloud
+    gcloud:
+      GCE_PROJECT: witronix-sandbox
+      GCE_SERVICE_ACCOUNT_FILE: /secrets/gcloud-credentials.json
+  domains:
+    enabled: true
+    domainsList:
+      - main: '*.demo.rootleveltech.com'

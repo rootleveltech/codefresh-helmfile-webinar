@@ -1,0 +1,8 @@
+google:
+  project: "site-impact-infra"
+  serviceAccountSecret: "gcloud-dns-creds"
+domainFilters: [ "demo.rootleveltech.com" ]
+policy: upsert-only
+provider: google
+rbac:
+  create: true
