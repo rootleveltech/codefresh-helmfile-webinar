@@ -6,6 +6,10 @@ releases:
 - name: dns
   namespace: kube-system
   chart: stable/external-dns
+  labels: 
+    name: dns
   version: 2.20.4
   values:
     - values.yaml
+  secrets:
+    - secrets.yaml

@@ -1,3 +1,7 @@
+helmfiles:
+- # Path to the helmfile state file being processed BEFORE releases in this state file
+  path: ../dns/helmfile.yaml
+
 repositories:
 - name: stable
   url: https://kubernetes-charts.storage.googleapis.com
@@ -6,6 +10,8 @@ releases:
 - name: traefik-public
   namespace: ingress
   chart: stable/traefik
+  labels:                                  # Arbitrary key value pairs for filtering releases
+    name: traefik-public
   version: 1.86.2
   values:
     - values.yaml
