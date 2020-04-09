@@ -1,7 +1,0 @@
-releases:
-- name: mywp
-  namespace: default
-  chart: stable/wordpress
-  set:
-  - name: ingress.enabled
-    value: false

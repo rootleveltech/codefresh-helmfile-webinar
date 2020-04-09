@@ -4,7 +4,7 @@ rbac:
 service:
   annotations: {}
 dashboard:
-  domain:  traefik-public.demo.rootleveltech.com
+  domain:  traefik-public.{{ .Values.domain }}
   enabled: true
   ingress:
     annotations:
@@ -25,9 +25,9 @@ acme:
   dnsProvider:
     name: gcloud
     gcloud:
-      GCE_PROJECT: witronix-sandbox
+      GCE_PROJECT: {{ .Values.project }}
       GCE_SERVICE_ACCOUNT_FILE: /secrets/gcloud-credentials.json
   domains:
     enabled: true
     domainsList:
-      - main: '*.demo.rootleveltech.com'
+      - main: '*.{{ .Values.domain }}'

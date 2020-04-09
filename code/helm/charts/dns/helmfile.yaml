@@ -1,0 +1,31 @@
+helmfiles:
+- # Path to the helmfile state file being processed BEFORE releases in this state file
+  path: ../namespaces/helmfile.yaml
+
+repositories:
+- name: stable
+  url: https://kubernetes-charts.storage.googleapis.com
+- name: incubator
+  url: https://kubernetes-charts-incubator.storage.googleapis.com
+
+environments:
+  # The "default" environment is available and used when `helmfile` is run without `--environment NAME`.
+  default:
+    values:
+    - ../../environments/default.yaml.gotmpl
+  dev:
+    values:
+    - ../../environments/default.yaml.gotmpl
+
+releases:
+- name: {{ .Environment.Name }}-dns
+  namespace: {{ .Environment.Name }}-system
+  chart: stable/external-dns
+  labels: 
+    name: dns
+    environment: {{ .Environment.Name }}
+  version: 2.20.4
+  values:
+    - values.yaml.gotmpl
+  secrets:
+    - secrets.yaml

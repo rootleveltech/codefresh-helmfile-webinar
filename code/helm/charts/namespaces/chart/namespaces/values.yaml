@@ -1,0 +1,5 @@
+annotations: {}
+environment: default
+helmResourcePolicy: "keep"
+labels: {}
+namespaces: []

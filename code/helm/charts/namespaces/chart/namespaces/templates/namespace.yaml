@@ -1,0 +1,25 @@
+{{- $annotations := .Values.annotations -}}
+{{- $labels := .Values.labels -}}
+{{- $helmResourcePolicy := .Values.helmResourcePolicy -}}
+{{- range $key := .Values.namespaces}}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ . }}
+{{- if or $labels }}
+  labels:
+    {{- include "namespace.labels" $ | nindent 4 }}
+{{- with $labels }}
+    {{ toYaml . | nindent 4 }}
+{{- end }}
+{{- end }}
+{{- if $annotations }}
+{{- with $annotations }}
+  annotations:
+    helm.sh/resource-policy: "{{ $helmResourcePolicy }}"
+{{ toYaml . | indent 4 }}
+{{- end }}
+{{- end }}
+    
+{{- end -}}

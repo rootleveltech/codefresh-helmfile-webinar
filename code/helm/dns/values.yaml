@@ -1,7 +1,0 @@
-google:
-  project: "witronix-sandbox"
-domainFilters: [ "demo.rootleveltech.com" ]
-policy: upsert-only
-provider: google
-rbac:
-  create: true
