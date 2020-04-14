@@ -1,5 +1,5 @@
-#helmfiles:
-#- path: ../namespaces/helmfile.yaml
+helmfiles:
+- path: ../namespaces/helmfile.yaml
 
 repositories:
 - name: stable
@@ -8,7 +8,7 @@ repositories:
 environments:
   {{ .Environment.Name }}:
     values:
-    - domain: {{ exec "./get_domain.sh" (list "dev-system") }}
+    - domain: {{ exec "../../scripts/get_domain.sh" (list "dev-system") }}
 
 releases:
 - name: traefik-public
