@@ -1,0 +1,24 @@
+helmfiles:
+- path: ../namespaces/helmfile.yaml
+
+repositories:
+- name: stable
+  url: https://kubernetes-charts.storage.googleapis.com
+
+environments:
+  {{ .Environment.Name }}:
+    values:
+    - ../../environments/default.yaml.gotmpl
+
+releases:
+- name: {{ .Environment.Name }}-dns
+  namespace: {{ .Environment.Name }}-system
+  chart: stable/external-dns
+  labels: 
+    name: dns
+    environment: {{ .Environment.Name }}
+  version: 2.20.4
+  values:
+    - values.yaml.gotmpl
+  secrets:
+    - secrets.yaml

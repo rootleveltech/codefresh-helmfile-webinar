@@ -1,0 +1,33 @@
+replicas: 1
+rbac:
+  enabled: true
+service:
+  annotations: {}
+dashboard:
+  domain:  traefik-public.{{ .Values.domain }}
+  enabled: true
+  ingress:
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: true
+      kubernetes.io/ingress.class: traefik-public
+kubernetes:
+  ingressClass: traefik-public
+  ingressEndpoint:
+    useDefaultPublishedService: true
+ssl:
+  enabled: true
+
+acme:
+  enabled: true
+  staging: false
+  email: devops@rootleveltech.com
+  challengeType: dns-01
+  dnsProvider:
+    name: gcloud
+    gcloud:
+      GCE_PROJECT: {{ .Values.project }}
+      GCE_SERVICE_ACCOUNT_FILE: /secrets/gcloud-credentials.json
+  domains:
+    enabled: true
+    domainsList:
+      - main: '*.{{ .Values.domain }}'
