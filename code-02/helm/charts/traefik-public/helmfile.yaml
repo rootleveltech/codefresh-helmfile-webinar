@@ -1,19 +1,19 @@
 helmfiles:
-- path: ../dns/helmfile.yaml
+- path: ../namespaces/helmfile.yaml
 
-repositories:
-- name: stable
-  url: https://kubernetes-charts.storage.googleapis.com
-- name: incubator
-  url: https://kubernetes-charts-incubator.storage.googleapis.com
+helmDefaults:
+  kubeContext: gke_witronix-sandbox_us-central1-c_cluster-1
+
+#repositories:
+#- name: stable
+#  url: https://kubernetes-charts.storage.googleapis.com
+#- name: incubator
+#  url: https://kubernetes-charts-incubator.storage.googleapis.com
 
 environments:
-  # The "default" environment is available and used when `helmfile` is run without `--environment NAME`.
-  default:
+  {{ .Environment.Name }}:
     values:
-    - ../../environments/default.yaml.gotmpl
-  dev:
-    values:
+    - domain: {{ exec "./get_domain.sh" (list "dev" "dev-system") }}
     - ../../environments/default.yaml.gotmpl
 
 releases:

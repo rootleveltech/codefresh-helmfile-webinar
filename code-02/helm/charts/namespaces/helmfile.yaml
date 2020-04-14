@@ -1,6 +1,8 @@
-helmfiles:
-- # Path to the helmfile state file being processed BEFORE releases in this state file
-  path: ../namespaces/helmfile.yaml
+#helmfiles:
+#- path: ../helmfile.yaml
+
+helmDefaults:
+  kubeContext: gke_witronix-sandbox_us-central1-c_cluster-1
 
 repositories:
 - name: stable
@@ -10,22 +12,17 @@ repositories:
 
 environments:
   # The "default" environment is available and used when `helmfile` is run without `--environment NAME`.
-  default:
-    values:
-    - ../../environments/default.yaml.gotmpl
-  dev:
+  {{ .Environment.Name }}:
     values:
     - ../../environments/default.yaml.gotmpl
 
 releases:
-- name: {{ .Environment.Name }}-dns
-  namespace: {{ .Environment.Name }}-system
-  chart: stable/external-dns
+- name: {{ .Environment.Name }}-namespaces
+  namespace: kube-system
+  chart: chart/namespaces
   labels: 
-    name: dns
+    name: namespaces
     environment: {{ .Environment.Name }}
-  version: 2.20.4
   values:
-    - values.yaml.gotmpl
-  secrets:
-    - secrets.yaml
+  - namespaces: [ "{{ .Environment.Name }}-system", "{{ .Environment.Name }}-services" ]
+  version: 0.1.0

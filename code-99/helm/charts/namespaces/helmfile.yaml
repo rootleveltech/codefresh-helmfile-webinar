@@ -1,0 +1,28 @@
+#helmfiles:
+#- path: ../helmfile.yaml
+
+helmDefaults:
+  kubeContext: gke_witronix-sandbox_us-central1-c_cluster-1
+
+repositories:
+- name: stable
+  url: https://kubernetes-charts.storage.googleapis.com
+- name: incubator
+  url: https://kubernetes-charts-incubator.storage.googleapis.com
+
+environments:
+  # The "default" environment is available and used when `helmfile` is run without `--environment NAME`.
+  {{ .Environment.Name }}:
+    values:
+    - ../../environments/default.yaml.gotmpl
+
+releases:
+- name: {{ .Environment.Name }}-namespaces
+  namespace: kube-system
+  chart: chart/namespaces
+  labels: 
+    name: namespaces
+    environment: {{ .Environment.Name }}
+  values:
+  - namespaces: [ "{{ .Environment.Name }}-system", "{{ .Environment.Name }}-services" ]
+  version: 0.1.0

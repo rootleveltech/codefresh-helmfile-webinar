@@ -1,6 +1,9 @@
 #helmfiles:
 #- path: ../helmfile.yaml
 
+helmDefaults:
+  kubeContext: gke_witronix-sandbox_us-central1-c_cluster-1
+
 repositories:
 - name: stable
   url: https://kubernetes-charts.storage.googleapis.com
@@ -9,10 +12,7 @@ repositories:
 
 environments:
   # The "default" environment is available and used when `helmfile` is run without `--environment NAME`.
-  default:
-    values:
-    - ../../environments/default.yaml.gotmpl
-  dev:
+  {{ .Environment.Name }}:
     values:
     - ../../environments/default.yaml.gotmpl
 

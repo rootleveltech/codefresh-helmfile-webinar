@@ -3,6 +3,8 @@ rbac:
   enabled: true
 service:
   annotations: {}
+  labels:
+    environment: {{ .Values.environment }}
 dashboard:
   domain:  traefik-public.{{ .Values.domain }}
   enabled: true
@@ -10,6 +12,8 @@ dashboard:
     annotations:
       ingress.kubernetes.io/ssl-redirect: false
       kubernetes.io/ingress.class: traefik-public
+    labels:
+      environment: {{ .Values.environment }}
 kubernetes:
   ingressClass: traefik-public
   ingressEndpoint:
