@@ -1,0 +1,22 @@
+replicas: 1
+rbac:
+  enabled: true
+service:
+  annotations: {}
+{{ if .Values.domain -}}
+dashboard:
+  domain:  traefik-public.{{ .Values.domain }}
+  enabled: true
+  ingress:
+    annotations:
+      ingress.kubernetes.io/ssl-redirect: true
+      kubernetes.io/ingress.class: traefik-public
+{{ end -}}
+kubernetes:
+  ingressClass: traefik-public
+{{ if .Values.domain -}}
+ssl:
+  enabled: true
+  generateTLS: true
+  defaultCN: '*.{{ .Values.domain }}'
+{{ end -}}

@@ -1,5 +1,5 @@
 helmfiles:
-- path: ../dns/helmfile.yaml
+  - path: ../dns/helmfile.yaml
 
 helmDefaults:
   kubeContext: gke_witronix-sandbox_us-central1-c_cluster-1

@@ -21,7 +21,7 @@ helmfile diff
 helmfile destroy
 ```
 
-### Helm Hook (create namespace)
+#### Helm Hook (create namespace)
 ```
 /Users/braden/codefresh-helmfile-webinar/code-04/helm/helmfile/myapp
 helmfile apply
@@ -29,3 +29,16 @@ kubectl get po -w -n dev
 helmfile destroy
 ```
 
+#### Helm Dependencies (create namespace)
+```
+/Users/braden/codefresh-helmfile-webinar/code-05/helm/helmfile/myapp
+helmfile apply
+kubectl get po -w -n dev
+helmfile destroy
+```
+
+
+#### Helm Advanced Templating
+```
+
+```

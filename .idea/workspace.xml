@@ -2,36 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51f6e662-f51f-45ae-b899-d77efef0f85b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/dns/helmfile.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/dns/secrets.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/dns/values.yaml.gotmpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/helmfile.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/namespaces/chart/namespaces/.helmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/namespaces/chart/namespaces/Chart.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/namespaces/chart/namespaces/templates/NOTES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/namespaces/chart/namespaces/templates/_helpers.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/namespaces/chart/namespaces/templates/namespace.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/namespaces/chart/namespaces/values.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/namespaces/helmfile.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/traefik-public/helmfile.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/traefik-public/secrets.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/charts/traefik-public/values.yaml.gotmpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/environments/default.yaml.gotmpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-01/helm/scripts/create_namespace.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/namespaces/chart/namespaces/.helmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/namespaces/chart/namespaces/Chart.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/namespaces/chart/namespaces/templates/NOTES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/namespaces/chart/namespaces/templates/_helpers.tpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/namespaces/chart/namespaces/templates/namespace.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/namespaces/chart/namespaces/values.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/namespaces/helmfile.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/traefik-public/get_domain.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/traefik-public/helmfile.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/traefik-public/secrets.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/charts/traefik-public/values.yaml.gotmpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/environments/default.yaml.gotmpl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code-02/helm/scripts/create_namespace.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-99/helm/charts/traefik-public/helmfile.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/code-99/helm/charts/traefik-public/helmfile.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,12 +18,39 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="405">
-                <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+              <first_editor relative-caret-position="480">
+                <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
               </second_editor>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code-99/helm/charts/traefik-public/helmfile.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code-05/helm/helmfile/myapp/helmfile.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code-99/helm/charts/helmfile.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -63,6 +63,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/code-05/helm/helmfile/myapp/helmfile.yaml" />
+        <option value="$PROJECT_DIR$/code-99/helm/charts/traefik-public/helmfile.yaml" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -85,6 +87,58 @@
               <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
               <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-05" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-05" type="462c0819:PsiDirectoryNode" />
+              <item name="helm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-05" type="462c0819:PsiDirectoryNode" />
+              <item name="helm" type="462c0819:PsiDirectoryNode" />
+              <item name="helmfile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-05" type="462c0819:PsiDirectoryNode" />
+              <item name="helm" type="462c0819:PsiDirectoryNode" />
+              <item name="helmfile" type="462c0819:PsiDirectoryNode" />
+              <item name="myapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-99" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-99" type="462c0819:PsiDirectoryNode" />
+              <item name="helm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-99" type="462c0819:PsiDirectoryNode" />
+              <item name="helm" type="462c0819:PsiDirectoryNode" />
+              <item name="charts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="codefresh-helmfile-webinar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="codefresh-helmfile-webinar" type="462c0819:PsiDirectoryNode" />
+              <item name="code-99" type="462c0819:PsiDirectoryNode" />
+              <item name="helm" type="462c0819:PsiDirectoryNode" />
+              <item name="charts" type="462c0819:PsiDirectoryNode" />
+              <item name="traefik-public" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -94,7 +148,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586844863938" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586847410221" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -154,11 +208,32 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/code-05/helm/helmfile/myapp/helmfile.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code-99/helm/charts/helmfile.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code-99/helm/charts/traefik-public/helmfile.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="405">
-            <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <first_editor relative-caret-position="480">
+            <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
