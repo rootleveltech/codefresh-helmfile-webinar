@@ -1,3 +1,7 @@
+{{ if eq "notdev" "dev" -}}
 domain: demo.rootleveltech.com
+{{ else -}}
+domain: {{ exec "../scripts/get_domain.sh" (list .Environment.Name) }}
+{{ end -}}
 environment: {{ .Environment.Name }}
 project: witronix-sandbox

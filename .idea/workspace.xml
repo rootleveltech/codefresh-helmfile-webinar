@@ -18,8 +18,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="480">
-                <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+              <first_editor relative-caret-position="630">
+                <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -148,7 +148,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586847410221" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586847547663" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -232,8 +232,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="480">
-            <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+          <first_editor relative-caret-position="630">
+            <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />

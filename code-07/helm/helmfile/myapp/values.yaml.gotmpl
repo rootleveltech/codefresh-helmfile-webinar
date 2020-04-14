@@ -7,7 +7,7 @@ ingress:
   enabled: true
   annotations:
     ingress.kubernetes.io/ssl-redirect: "true"
-    kubernetes.io/ingress.class: traefik-public
+    kubernetes.io/ingress.class: {{ .Environment.Name }}-traefik-public
   hosts:
     - host: myapp.{{ .Values.domain }}
       paths:

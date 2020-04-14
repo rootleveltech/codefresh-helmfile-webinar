@@ -11,8 +11,8 @@ environments:
     - ../../environments/default.yaml.gotmpl
 
 releases:
-- name: traefik-public
-  namespace: dev-system
+- name: {{ .Environment.Name }}-traefik-public
+  namespace: {{ .Environment.Name }}-system
   chart: stable/traefik
   labels:                                  # Arbitrary key value pairs for filtering releases
     name: traefik-public

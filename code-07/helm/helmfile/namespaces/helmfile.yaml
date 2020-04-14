@@ -8,11 +8,11 @@ environments:
     - ../../environments/default.yaml.gotmpl
 
 releases:
-- name: dev-namespaces
+- name: {{ .Environment.Name }}-namespaces
   namespace: kube-system
   chart: ../../charts/namespaces
   labels: 
-    name: dev-namespaces
+    name: {{ .Environment.Name }}-namespaces
   values:
-  - namespaces: [ "dev-system", "dev-services" ]
+  - namespaces: [ "{{ .Environment.Name }}-system", "{{ .Environment.Name }}-services" ]
   version: 0.1.0

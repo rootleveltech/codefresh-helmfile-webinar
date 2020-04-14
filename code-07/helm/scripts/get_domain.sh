@@ -1,8 +1,8 @@
 #!/bin/bash
 
-NS=$1
+ENV=$1
 
-INGRESS_IP=`kubectl get svc -n $NS traefik-public -o jsonpath='{.status.loadBalancer.ingress[*].ip}' 2> /dev/null`
+INGRESS_IP=`kubectl get svc -n ${ENV}-system ${ENV}-traefik-public -o jsonpath='{.status.loadBalancer.ingress[*].ip}' 2> /dev/null`
 exit_status=$?
 if [ $exit_status -eq 0 ]; then
   if [ $INGRESS_IP ]; then

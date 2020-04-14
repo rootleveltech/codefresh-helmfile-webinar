@@ -13,7 +13,6 @@ helmDefaults:
 environments:
   {{ .Environment.Name }}:
     values:
-    - domain: {{ exec "./get_domain.sh" (list "dev") }}
     - ../../environments/default.yaml.gotmpl
 
 releases:
