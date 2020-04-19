@@ -4,7 +4,7 @@ helmfiles:
 environments:
   {{ .Environment.Name }}:
     values:
-    -  ../../environments/default.yaml.gotmpl
+    - ../../environments/{{ .Environment.Name }}.yaml.gotmpl
 
 releases:
 - name: {{ .Environment.Name }}-myapp                            # name of this release
