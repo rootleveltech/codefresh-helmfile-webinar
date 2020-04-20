@@ -8,7 +8,11 @@ repositories:
 environments:
   {{ .Environment.Name }}:
     values:
+{{- if eq .Environment.Name "dev" }}
     - ../../environments/{{ .Environment.Name }}.yaml.gotmpl
+{{- else }}
+    - ../../environments/default.yaml.gotmpl
+{{- end }}
 
 releases:
 - name: {{ .Environment.Name }}-traefik-public
