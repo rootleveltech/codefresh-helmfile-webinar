@@ -42,3 +42,9 @@ helmfile destroy
 ```
 
 ```
+
+
+
+https://gist.github.com/twolfson/01d515258eef8bdbda4f#setting-up-sops-with-pgp
+
+
