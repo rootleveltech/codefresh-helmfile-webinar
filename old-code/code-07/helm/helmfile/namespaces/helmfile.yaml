@@ -1,0 +1,23 @@
+repositories:
+- name: stable
+  url: https://kubernetes-charts.storage.googleapis.com
+
+environments:
+  {{ .Environment.Name }}:
+    values:
+{{- if eq .Environment.Name "dev" }}
+    - ../../environments/{{ .Environment.Name }}.yaml.gotmpl
+{{- else }}
+    - domain: {{ exec "../../scripts/get_domain.sh" (list .Environment.Name) }}
+    - ../../environments/default.yaml.gotmpl
+{{- end }}
+
+releases:
+- name: {{ .Environment.Name }}-namespaces
+  namespace: kube-system
+  chart: ../../charts/namespaces
+  labels: 
+    name: {{ .Environment.Name }}-namespaces
+  values:
+  - namespaces: [ "{{ .Environment.Name }}-system", "{{ .Environment.Name }}-services" ]
+  version: 0.1.0

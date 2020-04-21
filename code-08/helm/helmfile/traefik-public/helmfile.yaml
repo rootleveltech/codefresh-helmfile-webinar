@@ -1,0 +1,23 @@
+helmfiles:
+- path: ../dns/helmfile.yaml
+
+repositories:
+- name: stable
+  url: https://kubernetes-charts.storage.googleapis.com
+
+environments:
+  dev:
+    values:
+    - ../../environments/dev.yaml.gotmpl
+
+releases:
+- name: dev-traefik-public
+  namespace: dev-system
+  chart: stable/traefik
+  labels:                                  # Arbitrary key value pairs for filtering releases
+    name: traefik-public
+  version: 1.86.2
+  values:
+    - values.yaml.gotmpl
+  secrets:
+    - secrets.yaml

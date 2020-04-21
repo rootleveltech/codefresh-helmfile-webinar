@@ -1,0 +1,8 @@
+google:
+  project: {{ .Values.project }}
+domainFilters: [ {{ .Values.domain | quote }} ]
+policy: upsert-only
+provider: google
+rbac:
+  create: true
+txtOwnerId: {{ .Environment.Name }}
