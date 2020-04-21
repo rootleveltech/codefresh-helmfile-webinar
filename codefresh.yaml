@@ -16,22 +16,18 @@ steps:
   dryrun:
     title: "Dry Run"
     type: freestyle
-    image: r.cfcr.io/rlt/cf-demo/helmfile:0.106.3-beta06 #codefreshplugins/cfstep-helmfile:3.1.1 
+    image: r.cfcr.io/rlt/cf-demo/helmfile:0.111.0-beta00
     working_directory: "${{clone}}"
     environment:
       - COMMANDS=diff
-      - ENVIRONMENT=${{ENVIRONMENT}}
       - KUBE_CONTEXT=helmfile-demo
     commands:
       - echo $HELMFILE_SECRET_CERT |  base64 -d > private.rsa
       - echo $GCP_CREDENTIALS | base64 -d > credentials.json
       - gcloud auth activate-service-account --key-file=credentials.json
       - kubectl config use-context $KUBE_CONTEXT
-      - kubectl config get-contexts
-      - printenv
-      - kubectl get svc -A
       - gpg --import private.rsa
-      - cd /codefresh/volume/codefresh-helmfile-webinar/code-07/helm/helmfile/${{SERVICE}}
+      - cd /codefresh/volume/codefresh-helmfile-webinar/$CODE_DIR/helm/helmfile/$SERVICE
       - python3 /helmfile.py
   ask_for_permission:
     title: Deploy?
@@ -39,11 +35,10 @@ steps:
   deploy:
     title: "Deploy"
     type: freestyle
-    image: r.cfcr.io/rlt/cf-demo/helmfile:0.106.3-beta06 #codefreshplugins/cfstep-helmfile:3.1.1 
+    image: r.cfcr.io/rlt/cf-demo/helmfile:0.111.0-beta00
     working_directory: "${{clone}}"
     environment:
       - COMMANDS=apply
-      - ENVIRONMENT=${{ENVIRONMENT}}
       - KUBE_CONTEXT=helmfile-demo
     commands:
       - echo $HELMFILE_SECRET_CERT |  base64 -d > private.rsa
@@ -51,7 +46,7 @@ steps:
       - gcloud auth activate-service-account --key-file=credentials.json
       - kubectl config use-context $KUBE_CONTEXT
       - gpg --import private.rsa
-      - cd /codefresh/volume/codefresh-helmfile-webinar/code-07/helm/helmfile/${{SERVICE}}
+      - cd /codefresh/volume/codefresh-helmfile-webinar/$CODE_DIR/helm/helmfile/$SERVICE
       - python3 /helmfile.py
     when:
       steps:
