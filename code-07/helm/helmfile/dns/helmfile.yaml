@@ -11,6 +11,7 @@ environments:
 {{- if eq .Environment.Name "dev" }}
     - ../../environments/{{ .Environment.Name }}.yaml.gotmpl
 {{- else }}
+    - domain: {{ exec "../../scripts/get_domain.sh" (list .Environment.Name) }}
     - ../../environments/default.yaml.gotmpl
 {{- end }}
 
