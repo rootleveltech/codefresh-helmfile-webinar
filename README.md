@@ -2,7 +2,7 @@
 
 #### Helm Hook (create namespace)
 ```
-/Users/braden/codefresh-helmfile-webinar/code-04/helm/helmfile/myapp
+/Users/braden/codefresh-helmfile-webinar/code-01/helm/helmfile/myapp
 helmfile apply
 kubectl get po -w -n dev
 helmfile destroy
