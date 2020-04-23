@@ -4,6 +4,12 @@
 version: "1.0"
 # Stages can help you organize your steps in stages
 
+stages:
+  - "clone"
+  - "dryrun"
+  - "approve"
+  - "deploy"
+
 steps:
   clone:
     title: "Cloning repository"
@@ -13,6 +19,8 @@ steps:
     # Learn more at codefresh.io/docs/docs/codefresh-yaml/variables/
     revision: "${{CF_BRANCH}}"
     git: "github-1"
+    stage: "clone"
+
   dryrun:
     title: "Dry Run"
     type: freestyle
@@ -29,9 +37,13 @@ steps:
       - gpg --import private.rsa
       - cd /codefresh/volume/codefresh-helmfile-webinar/$CODE_DIR/helm/helmfile/$SERVICE
       - python3 /helmfile.py
+    stage: "dryrun"
+
   ask_for_permission:
     title: Deploy?
     type: pending-approval
+    stage: "approve"
+
   deploy:
     title: "Deploy"
     type: freestyle
@@ -48,6 +60,7 @@ steps:
       - gpg --import private.rsa
       - cd /codefresh/volume/codefresh-helmfile-webinar/$CODE_DIR/helm/helmfile/$SERVICE
       - python3 /helmfile.py
+    stage: "deploy"
     when:
       steps:
         - name: ask_for_permission
