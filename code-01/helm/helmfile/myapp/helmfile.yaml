@@ -1,10 +1,10 @@
 releases:
-- name: myapp                   # name of this release
-  namespace: default            # target namespace
-  chart: ../../charts/myapp     # the chart being installed to create this release, referenced by `repository/chart` syntax
-  version: 0.1.1
+- name: myapp
+  namespace: mynamespace
+  chart: ../../charts/myapp
+  version: 0.1.0
   hooks:
-  - events: ["prepare"]         # Supported Events: prepare, presync, postsync, cleanup
+  - events: ["prepare"]
     showlogs: true
     command: "../../scripts/create_namespace.sh"
-    args: ["dev"]
+    args: ["mynamespace"]
