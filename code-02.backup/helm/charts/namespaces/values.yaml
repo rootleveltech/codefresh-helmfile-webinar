@@ -1,0 +1,6 @@
+annotations: {}
+# - helm.sh/resource-policy: "keep"
+
+environment: default
+labels: {}
+namespaces: []

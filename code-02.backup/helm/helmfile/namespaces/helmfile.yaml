@@ -1,0 +1,18 @@
+repositories:
+- name: stable
+  url: https://kubernetes-charts.storage.googleapis.com
+
+environments:
+  dev:
+    values:
+    - ../../environments/dev.yaml.gotmpl
+
+releases:
+- name: dev-namespaces
+  namespace: kube-system
+  chart: ../../charts/namespaces
+  labels: 
+    name: dev-namespaces
+  values:
+  - namespaces: [ "dev-system", "dev-services" ]
+  version: 0.1.0

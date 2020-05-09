@@ -1,5 +1,5 @@
 helmfiles:
-- path: ../namespaces/helmfile.yaml
+- path: ../dns/helmfile.yaml
 
 repositories:
 - name: stable

@@ -1,0 +1,10 @@
+releases:
+- name: myapp                   
+  namespace: mynamespace
+  chart: ../../charts/myapp     
+  version: 0.1.0
+  hooks:
+  - events: ["prepare"]         
+    showlogs: true
+    command: "../../scripts/create_namespace.sh"
+    args: ["mynamespace"]
