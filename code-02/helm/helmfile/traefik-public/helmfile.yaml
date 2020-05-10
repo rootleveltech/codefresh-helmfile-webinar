@@ -20,5 +20,3 @@ releases:
   version: 1.86.2
   values:
     - values.yaml.gotmpl
-  secrets:
-    - secrets.yaml
