@@ -1,0 +1,16 @@
+helmfiles:
+- path: ../traefik-public/helmfile.yaml
+
+environments:
+  {{ .Environment.Name }}:
+    values:
+    - domain: {{ exec "../../scripts/get_domain.sh" (list .Environment.Name) }}
+    - ../../environments/default.yaml.gotmpl
+
+releases:
+- name: {{ .Environment.Name }}-myapp                            # name of this release
+  namespace: {{ .Environment.Name }}-services             # target namespace
+  chart: ../../charts/myapp     # the chart being installed to create this release, referenced by `repository/chart` syntax
+  version: 0.1.2
+  values:
+    - values.yaml.gotmpl

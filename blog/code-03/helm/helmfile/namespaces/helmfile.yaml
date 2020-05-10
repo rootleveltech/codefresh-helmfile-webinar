@@ -1,0 +1,15 @@
+environments:
+  {{ .Environment.Name }}:
+    values:
+    - domain: {{ exec "../../scripts/get_domain.sh" (list .Environment.Name) }}
+    - ../../environments/default.yaml.gotmpl
+
+releases:
+- name: {{ .Environment.Name }}-namespaces
+  namespace: kube-system
+  chart: ../../charts/namespaces
+  labels: 
+    name: {{ .Environment.Name }}-namespaces
+  values:
+  - namespaces: [ "{{ .Environment.Name }}-system", "{{ .Environment.Name }}-services" ]
+  version: 0.1.0
