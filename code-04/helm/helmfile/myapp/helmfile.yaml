@@ -3,13 +3,11 @@ helmfiles:
 
 environments:
   {{ .Environment.Name }}:
+    missingFileHandler: Warn      # Allows missing environment yaml template
     values:
-{{- if eq .Environment.Name "dev" }}
-    - ../../environments/{{ .Environment.Name }}.yaml.gotmpl
-{{- else }}
     - domain: {{ exec "../../scripts/get_domain.sh" (list .Environment.Name) }}
     - ../../environments/default.yaml.gotmpl
-{{- end }}
+    - ../../environments/{{ .Environment.Name }}.yaml.gotmpl
 
 releases:
 - name: {{ .Environment.Name }}-myapp                            # name of this release
