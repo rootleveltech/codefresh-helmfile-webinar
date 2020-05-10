@@ -8,9 +8,9 @@ environments:
     - ../../environments/default.yaml.gotmpl
 
 releases:
-- name: {{ .Environment.Name }}-myapp                            # name of this release
-  namespace: {{ .Environment.Name }}-services             # target namespace
-  chart: ../../charts/myapp     # the chart being installed to create this release, referenced by `repository/chart` syntax
+- name: {{ .Environment.Name }}-myapp
+  namespace: {{ .Environment.Name }}-services
+  chart: ../../charts/myapp
   version: 0.1.2
   values:
     - values.yaml.gotmpl
