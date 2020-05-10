@@ -35,7 +35,7 @@ steps:
       - gcloud auth activate-service-account --key-file=credentials.json
       - kubectl config use-context $KUBE_CONTEXT
       - gpg --import private.rsa
-      - cd /codefresh/volume/codefresh-helmfile-webinar/blog/$CODE_DIR/helm/helmfile/$SERVICE
+      - cd /codefresh/volume/codefresh-helmfile-webinar/$CODE_DIR/helm/helmfile/$SERVICE
       - python3 /helmfile.py
     stage: "dryrun"
 
@@ -58,7 +58,7 @@ steps:
       - gcloud auth activate-service-account --key-file=credentials.json
       - kubectl config use-context $KUBE_CONTEXT
       - gpg --import private.rsa
-      - cd /codefresh/volume/codefresh-helmfile-webinar/blog/$CODE_DIR/helm/helmfile/$SERVICE
+      - cd /codefresh/volume/codefresh-helmfile-webinar/$CODE_DIR/helm/helmfile/$SERVICE
       - python3 /helmfile.py
     stage: "deploy"
     when:
